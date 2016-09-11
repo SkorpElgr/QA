@@ -13,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class InitTest {
     @Test
     public void initWebdriver(){
-        System.setProperty("webdriver.chrome.driver", "Y:\\Git\\QA\\drivers\\chromedriver2_24.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver2_24.exe");
         WebDriver driver = new ChromeDriver();
         driver.navigate().to("https://www.google.com.ua");
         Assert.assertTrue("https://www.google.com.ua/", driver.getCurrentUrl().contains("google.com.ua"));
