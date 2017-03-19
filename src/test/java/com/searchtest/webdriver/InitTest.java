@@ -31,15 +31,9 @@ public class InitTest {
     }
 
     @Test
-    public void googleTest() {
-        WebDriver driver = new ChromeDriver();
+    public void myFirstTest() {
         driver.navigate().to("https://www.google.com.ua");
         Assert.assertTrue("https://www.google.com.ua", driver.getCurrentUrl().contains("google.com.ua"));
-    }
-
-    @Test
-    public void myFirstTest() {
-        driver.get("http://www.google.com");
         driver.findElement(By.name("q")).sendKeys("webdriver");
         driver.findElement(By.name("btnG")).click();
         wait.until(titleIs("webdriver - Пошук Google"));
