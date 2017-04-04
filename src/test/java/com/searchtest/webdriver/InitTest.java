@@ -19,7 +19,7 @@ public class InitTest {
 
     @Before
     public void start() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver2_24.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver2_28.exe");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 20);
     }
@@ -36,7 +36,7 @@ public class InitTest {
         Assert.assertTrue("https://www.google.com.ua", driver.getCurrentUrl().contains("google.com.ua"));
         driver.findElement(By.name("q")).sendKeys("webdriver");
         driver.findElement(By.name("btnG")).click();
-        wait.until(titleIs("webdriver - Пошук Google"));
+        wait.until(titleIs("webdriver - Google Search"));
     }
 
 }
