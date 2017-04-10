@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class TestBaseMain {
     public WebDriver driver;
     public WebDriverWait wait;
-    protected LogInPage
+//    protected LogInPage
 
     @Before
     public void start() {
@@ -29,10 +29,10 @@ public class TestBaseMain {
         driver.quit();
         driver = null;
     }
-
-    public static logInAs() {
-
-    }
+//
+//    public static logInAs() {
+//
+//    }
 
 
 }
