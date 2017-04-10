@@ -9,7 +9,9 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <aspectj.version>1.7.4</aspectj.version>
+        <jetty.http.port>9000</jetty.http.port>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aspectj.version>1.8.9</aspectj.version>
          <allure.version>1.5.2</allure.version>
     </properties>
 
@@ -27,6 +29,13 @@
             <groupId>ru.yandex.qatools.allure</groupId>
             <artifactId>allure-junit-adaptor</artifactId>
             <version>${allure.version}</version>
+        </dependency>
+
+        <!-- logging, this is optional -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.14</version>
         </dependency>
 
         <dependency>
@@ -62,21 +71,22 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
-            <!--Needed only to show reports locally. Run jetty:run and
-            open localhost:8080 to show the report-->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.2.10.v20150310</version>
+                <version>9.3.7.v20160115</version>
                 <configuration>
                     <webAppSourceDirectory>${project.build.directory}/site/allure-maven-plugin</webAppSourceDirectory>
+                    <httpConnector>
+                        <port>${jetty.http.port}</port>
+                    </httpConnector>
                     <stopKey>stop</stopKey>
                     <stopPort>1234</stopPort>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
 
 
     <reporting>
