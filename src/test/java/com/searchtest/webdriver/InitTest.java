@@ -15,23 +15,7 @@ import java.util.concurrent.TimeUnit;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 
-public class InitTest {
-    private WebDriver driver;
-    private WebDriverWait wait;
-
-    @Before
-    public void start() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver2_28.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 20);
-    }
-
-    @After
-    public void stop() {
-        driver.quit();
-        driver = null;
-    }
+public class InitTest extends TestBaseMain {
 
     @Test
     public void myFirstTest() {
