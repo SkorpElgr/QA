@@ -12,7 +12,7 @@
         <jetty.http.port>9000</jetty.http.port>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <aspectj.version>1.8.9</aspectj.version>
-        <allure.version>1.5.2</allure.version>
+        <allure.version>{latest-allure-version}</allure.version>
         <allure.home>"C:\TeamCity\allure-commandline\bin\allure.bat"</allure.home>
     </properties>
 
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
             <artifactId>allure-junit-adaptor</artifactId>
-            <version>${allure.version}</version>
+            <!--<version>${allure.version}</version>-->
         </dependency>
 
         <!-- logging, this is optional -->
