@@ -12,7 +12,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 public class LitecartLogIn extends TestBaseMain {
     //http://localhost/litecart/admin/
     @Test
-    public void myFirstTest() {
+    public void LitecardLogIn() {
         try{
             driver.navigate().to("http://localhost/litecart/admin/");
 //            driver.findElement(By.xpath("//form[@name='login_form']//input[@type='password']"))
