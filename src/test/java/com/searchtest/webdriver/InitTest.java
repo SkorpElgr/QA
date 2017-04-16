@@ -18,37 +18,7 @@ import java.util.concurrent.TimeUnit;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 
-public class InitTest {
-    private WebDriver driver;
-    private WebDriverWait wait;
-    private String browserName;
-
-    @Before
-    public void start() {
-        browserName = "Chrome";
-        DesiredCapabilities caps = new DesiredCapabilities();
-        switch (browserName){
-            case "Chrome":
-                System.setProperty("webdriver.chrome.driver", "drivers/chromedriver2_24.exe");
-                driver = new ChromeDriver(caps);
-                break;
-            case "IE":
-                System.setProperty("webdriver.ie.driver", "drivers/IEDriverServer.exe");
-                caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-                driver = new InternetExplorerDriver(caps);
-                break;
-        }
-        driver.manage().deleteAllCookies();
-        driver.manage().window().setSize(new Dimension(1280,1024));
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 20);
-    }
-
-    @After
-    public void stop() {
-        driver.quit();
-        driver = null;
-    }
+public class InitTest extends TestBaseMain{
 
     @Test
     public void myFirstTest() {
