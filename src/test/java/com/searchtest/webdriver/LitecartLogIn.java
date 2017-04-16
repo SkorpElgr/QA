@@ -6,9 +6,6 @@ import org.openqa.selenium.By;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
-/**
- * Created by Admin on 16.04.2017.
- */
 public class LitecartLogIn extends TestBaseMain {
     //http://localhost/litecart/admin/
     @Test
