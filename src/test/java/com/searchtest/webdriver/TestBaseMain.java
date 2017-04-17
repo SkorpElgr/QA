@@ -28,8 +28,9 @@ public class TestBaseMain {
 
     @Before
     public void start() {
-        browserName = "Chrome";
-//      browserName = "FirefoxOld";
+//        browserName = "Chrome";
+//        browserName = "FirefoxNightly";
+      browserName = "FirefoxNightly";
         if (tlDriver.get() != null) {
             driver = tlDriver.get();
             wait = new WebDriverWait(driver, 10);
@@ -51,7 +52,7 @@ public class TestBaseMain {
                 break;
             case "FirefoxNightly":
                 System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-               caps.setCapability(FirefoxDriver.MARIONETTE, true);
+                caps.setCapability(FirefoxDriver.MARIONETTE, true);
                 driver = new FirefoxDriver(new FirefoxBinary(
                         new File("C:\\Program Files\\Nightly\\firefox.exe")),
                         new FirefoxProfile(),caps);
