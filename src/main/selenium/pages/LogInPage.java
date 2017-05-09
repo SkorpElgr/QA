@@ -7,18 +7,21 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by PS on 4/18/2017.
  */
-public class LogInPage extends Page {
+public class LogInPage {
+
+
+    WebDriver driver;
+    public LogInPage(WebDriver driver){
+        this.driver = driver;
+
+    }
 
     @FindBy(xpath = "//div[@class='b-input-b']/input[@name='username']")
     public WebElement emailInput;
 
-    public LogInPage(WebDriver driver) {
-        super(driver);
-    }
-
     public void openMainPage(){
         System.out.println(Name.TestEnvUrl.getFromProperty());
         driver.get(Name.TestEnvUrl.getFromProperty());
-
     }
+
 }

@@ -11,7 +11,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.LogInPage;
 
 import java.io.File;
 import java.util.Arrays;
@@ -25,12 +27,13 @@ public class TestBaseMain {
     public WebDriver driver;
     public WebDriverWait wait;
     public String browserName;
+    LogInPage LogInPage;
 
     @Before
     public void start() {
-//        browserName = "Chrome";
+        browserName = "Chrome";
 //        browserName = "FirefoxNightly";
-      browserName = "FirefoxNightly";
+//      browserName = "FirefoxNightly";
         if (tlDriver.get() != null) {
             driver = tlDriver.get();
             wait = new WebDriverWait(driver, 10);
@@ -72,6 +75,8 @@ public class TestBaseMain {
         wait = new WebDriverWait(driver, 20);
         Runtime.getRuntime().addShutdownHook(
                 new Thread(() -> { driver.quit(); driver = null; }));
+
+        LogInPage = PageFactory.initElements(driver, LogInPage.class);
 
     }
 
