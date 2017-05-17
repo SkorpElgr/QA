@@ -2,9 +2,7 @@ package com.searchtest.webdriver;
 
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.HasCapabilities;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -19,6 +17,8 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
+import static pages.Name.TestBrowser;
+
 /**
  * Created by PS on 4/4/2017.
  */
@@ -31,16 +31,13 @@ public class TestBaseMain {
 
     @Before
     public void start() {
-        browserName = "Chrome";
-//        browserName = "FirefoxNightly";
-//      browserName = "FirefoxNightly";
         if (tlDriver.get() != null) {
             driver = tlDriver.get();
             wait = new WebDriverWait(driver, 10);
             return;
         }
         DesiredCapabilities caps = new DesiredCapabilities();
-        switch (browserName) {
+        switch (TestBrowser.getFromProperty()) {
             case "Chrome":
                 System.setProperty("webdriver.chrome.driver", "drivers/chromedriver2_28.exe");
                 caps.setCapability("chrome.switches", Arrays.asList("--ignore-certificate-errors"));
@@ -84,6 +81,13 @@ public class TestBaseMain {
     public void stop() {
 //        driver.quit();
 //        driver = null;
+    }
+
+    public void waitIsVisible(WebElement element, By locator){
+        Impli
+        waitIsVisible(element, locator);
+
+
     }
 }
 
