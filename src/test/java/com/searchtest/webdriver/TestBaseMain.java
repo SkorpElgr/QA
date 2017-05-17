@@ -78,7 +78,7 @@ public class TestBaseMain {
     }
 
     @After
-    public void stop() {\
+    public void stop() {
 //        driver.quit();
 //        driver = null;
     }
