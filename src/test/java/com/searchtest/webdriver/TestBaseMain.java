@@ -78,13 +78,13 @@ public class TestBaseMain {
     }
 
     @After
-    public void stop() {
+    public void stop() {\
 //        driver.quit();
 //        driver = null;
     }
 
     public void waitIsVisible(WebElement element, By locator){
-        Impli
+
         waitIsVisible(element, locator);
 
 
